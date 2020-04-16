@@ -21,12 +21,12 @@
 </nav>
   
 <div class="container text-center">
-  <h3>Enter word to search ?</h3>
+  <h3 class="alert alert-info">Search in DictionaryApp</h3>
     <form class="form-inline" action="{% url 'home' %}" method="post">
     {% csrf_token %}
-    <div class="form-group">
+    <div class="form-group alert alert-info">
       <label class="sr-only" for="email">Email:</label>
-      <input type="text" class="form-control"  placeholder="Enter word"  name="word">
+      <input type="text" class="form-control"  placeholder="Enter word"  name="word" style="width:300px;height:50px;font-size:20px;">
     </div>
     <br>
     <button type="submit" class="btn btn-primary" style="margin:20px;">Submit</button>
@@ -34,8 +34,8 @@
 </div>
   
 {% if req %}
-<div class="container text-center">
-<textarea rows="5" cols="50" style="background-color:pink;font-size:30px" readonly>{{description}}</textarea>
+<div class="container text-center alert alert-active alert-dismissable">
+<textarea rows="5" cols="50" style="font-size:30px;letter-spacing:2;" readonly>{{description}}</textarea>
 {% endif %}
 </body>
 </html>

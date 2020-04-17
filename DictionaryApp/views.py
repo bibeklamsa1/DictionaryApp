@@ -6,6 +6,7 @@ def home(req):
     if req.POST:
         data = json.load(open('DictionaryApp\dictionary.json'))
         user_input=req.POST['word'].upper()
+        user_input.lstrip()
         if user_input=="":
             return render(req,"home.html",{"description":"Please enter some word then click on search button !!!","req":True})
 
